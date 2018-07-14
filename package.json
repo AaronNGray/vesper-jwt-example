@@ -1,33 +1,39 @@
 {
-  "name": "typescript-advanced-example",
+  "name": "vesper-jwt-example",
   "version": "0.1.0",
-  "description": "How to use Vesper Framework with TypeScript - advanced example",
+  "description": "How to use JWT authorization in Vesper Framework with TypeScript - advanced example",
   "license": "MIT",
   "readmeFilename": "README.md",
   "author": {
-    "name": "Umed Khudoiberdiev",
-    "email": "pleerock.me@gmail.com"
+    "name": "Ivan Kalinichenko",
+    "email": "kalinichenko@constlab.ru"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vesper-framework/typescript-advanced-example.git"
+    "url": "https://github.com/kalinichenko88/vesper-jwt-example.git"
   },
   "bugs": {
-    "url": "https://github.com/vesper-framework/typescript-advanced-example/issues"
+    "url": "https://github.com/kalinichenko88/vesper-jwt-example/issues"
   },
   "tags": [
     "vesper",
     "vesper-typescript-example"
   ],
   "dependencies": {
-    "vesper": "^0.1.0",
-    "sqlite3": "^4.0.0"
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.3.0",
+    "sqlite3": "^4.0.0",
+    "vesper": "^0.1.9"
   },
   "scripts": {
     "compile": "tsc",
-    "start": "npm run compile && node ./src/index.js"
+    "start": "npm run compile && node ./src/index.js",
+    "dev": "ts-node-dev src/index.ts"
   },
   "devDependencies": {
-    "typescript": "^2.7.2"
+    "@types/bcryptjs": "^2.4.1",
+    "@types/jsonwebtoken": "^7.2.8",
+    "ts-node-dev": "^1.0.0-pre.26",
+    "typescript": "^2.9.2"
   }
 }

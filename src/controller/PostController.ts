@@ -1,4 +1,4 @@
-import {ArgsValidator, Controller, Mutation, Query} from "vesper";
+import {ArgsValidator, Controller, Mutation, Query, Authorized} from "vesper";
 import {EntityManager, FindManyOptions} from "typeorm";
 import {TextGenerator} from "../service/TextGenerator";
 import {Post} from "../entity/Post";
@@ -37,6 +37,7 @@ export class PostController {
     }
 
     @Mutation()
+    @Authorized()
     async postSave(args: PostSaveArgs) {
 
         const post = args.id ? await this.entityManager.findOneOrFail(Post, args.id) : new Post();
@@ -52,6 +53,7 @@ export class PostController {
     }
 
     @Mutation()
+    @Authorized()
     async postDelete({ id }) {
         await this.entityManager.remove({ id: id });
         return true;

@@ -11,7 +11,7 @@ import {User} from "./entity/User";
 import {getManager} from "typeorm";
 
 bootstrap({
-    port: 3000,
+    port: 3030,
     controllers: [
         PostController,
         CategoryController,
